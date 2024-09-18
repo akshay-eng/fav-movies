@@ -50,6 +50,7 @@ metadata:
   name: fav-movies-ingress
   namespace: demo
 spec:
+  ingressClassName: nginx
   rules:
   - host: ubuntu-test.sddc.local
     http:
