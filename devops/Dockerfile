@@ -1,4 +1,3 @@
-
 FROM python:3.11-slim
 LABEL maintainer="EESI Lab - Automation Squad"
 RUN groupadd -r favuser && useradd -r -g favuser favuser
