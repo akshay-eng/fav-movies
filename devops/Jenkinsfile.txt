@@ -1,0 +1,21 @@
+FROM python:3.7-slim
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN pip install --no-cache-dir -q -r requirements.txt
+
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+
+RUN groupadd -r favuser && useradd -r -g favuser favuser
+USER favuser
+
+CMD [ "python", "main.py" ]
