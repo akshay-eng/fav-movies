@@ -52,7 +52,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: ubuntu-test.sddc.local
+  - host: kubeadm-devtest.sddc.local
     http:
       paths:
       - path: /
